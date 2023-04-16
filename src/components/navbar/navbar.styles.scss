@@ -1,0 +1,28 @@
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    
+    .logo {
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        left: 10px;
+        background-color: black;
+    }
+
+    h2 {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 50px;
+    }
+    
+    .nav-title {
+        cursor: pointer;
+    }
+    .nav-title:hover {
+        color: rgb(116, 142, 220);
+    }
+
+}
