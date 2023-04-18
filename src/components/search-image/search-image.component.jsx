@@ -3,16 +3,20 @@ import './search-image.styles.scss';
 import { Fragment } from 'react';
 
 
-const SearchImage = ({ searchInput }) => {
-
+const SearchImage = ({ searchInput ,setShowRandomImages}) => {
+    console.log("this is the search input", searchInput)
     const [searchImages, setSearchImages] = useState([]);
     console.log(searchImages);
 
     useEffect(() => {
         fetch(`https://api.unsplash.com/search/photos/?client_id=bsqbdHx7Sh35rWmh9ddCXHtWDn-ckRUbiTNMWMVNxJA&count=2&query=${searchInput}&per_page=2&orientation=landscape`)
         .then(response => response.json())
-        .then(images => setSearchImages(images.results));
-    },[])
+        .then((images) => {
+            setSearchImages(images.results)
+        }
+       
+        );
+    },[searchInput])
 
 
             return (
