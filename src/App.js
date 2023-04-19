@@ -1,13 +1,17 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 import Navbar from './components/navbar/navbar.component';
 import ImageContainer from './components/image-container/image-container.component';
 
 function App() {
+  const [showRandomImages, setShowRandomImages] = useState(true);
   return (
+
     <Fragment>
-      <Navbar />
-      <ImageContainer />
+      <Navbar setShowRandomImages={setShowRandomImages} />
+      {
+        showRandomImages && <ImageContainer />
+      }
     </Fragment>
   );
 }

@@ -5,7 +5,7 @@ import ImageContainer from '../image-container/image-container.component';
 import SearchImage from '../search-image/search-image.component';
 
 
-const SearchBox = () => {
+const SearchBox = ({setShowRandomImages}) => {
     
     const [input, setInput] = useState('');
     console.log('rendered searchbox');
@@ -14,9 +14,6 @@ const SearchBox = () => {
     const handleSubmit = ((e) => {
         e.preventDefault();
         setInput(e.target.elements.formInput.value);
-        if (input.length>1) {
-            <SearchImage searchInput={input} />
-        }
         console.log('you have handled the submit');
     });
         
@@ -32,6 +29,7 @@ const SearchBox = () => {
                             <button type="submit">Search</button>
                         </form>
                     </div>
+                    <SearchImage setShowRandomImages={setShowRandomImages} searchInput={input} />
             </Fragment>
         )
 };
