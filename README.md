@@ -1,4 +1,4 @@
-# Photo Booth (React Application)
+# Photo Booth (React js Application)
 
 
 Simple application built in React that finds photo from search keyword.
